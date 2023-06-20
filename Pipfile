@@ -1,0 +1,39 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ipykernel = "*"
+pandas = "*"
+numpy = "*"
+seaborn = "*"
+scikit-learn = "*"
+scipy = "*"
+category-encoders = "*"
+squarify = "*"
+yellowbrick = "*"
+jinja2 = "*"
+nltk = "*"
+gensim = "*"
+tensorflow = "*"
+transformers = "*"
+tensorflow-hub = "*"
+opencv-python = "*"
+opencv-contrib-python = "*"
+plot-keras-history = "*"
+mlflow = "*"
+lightgbm = "*"
+imblearn = "*"
+xgboost = "*"
+shap = "*"
+evidently = "*"
+fastapi = "*"
+uvicorn = "*"
+streamlit = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.11"
