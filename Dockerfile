@@ -23,5 +23,5 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 EXPOSE 8501
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "00_dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]
 #CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--conf", "app/gunicorn_conf.py", "-k", "uvicorn.workers.UvicornWorker", "app.api:app"]
