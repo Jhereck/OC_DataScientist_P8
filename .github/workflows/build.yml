@@ -1,0 +1,28 @@
+name: build + publish
+
+on:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Publish Docker Image
+              uses: matootie/github-docker@v3.1.0
+              with:
+                  accessToken: ${{ github.token }}
+                  containerRegistry: true
+
+            - name: Deploy on CapRover
+              uses: caprover/deploy-from-github@v1.1.2
+              with:
+                  server: https://admin.app.certifyed.io
+                  app: 'dashboard-api-oc'
+                  token: '${{ secrets.APP_TOKEN }}'
+                  image: 'ghcr.io/jhereck/oc_datascientist_p8:latest'
